@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Starting Flask application...'
                 // sh 'nohup python3 app.py > app.log 2>&1 &'
-                sh 'sudo docker run -d -p 80:80 httpd'
+                sh 'echo '123' | sudo -S docker run -d -p -S 123 80:80 httpd'
             }
         }
     }
