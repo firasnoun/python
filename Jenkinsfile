@@ -12,8 +12,8 @@ pipeline {
         stage('Run') {
             steps {
                 echo 'Starting Flask application...'
-                sh 'nohup python3 app.py > app.log 2>&1 &'
-                
+                // sh 'nohup python3 app.py > app.log 2>&1 &'
+                sh 'sudo docker run -d -p 80:80 httpd'
             }
         }
     }
