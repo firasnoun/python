@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Starting Flask application...'
                 // sh 'nohup python3 app.py > app.log 2>&1 &'
-                sh 'docker run -d -p 80:80 httpd'
+                sh 'docker-compose up -d'
             }
         }
     }
