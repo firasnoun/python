@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                  sh 'docker container prune -f'
                 checkout scm // Checks out the source code from the configured SCM
             }
         }
