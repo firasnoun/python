@@ -19,7 +19,7 @@ jobs:
         
     - name: SSH and Pull & Run Docker Container
       run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.VM_IP }} << EOF
+        ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USERNAME }}@${{ secrets.VM_IP }} << EOF
           docker pull firasnoun/testing:v1
           docker stop my-container || true
           docker rm my-container || true
