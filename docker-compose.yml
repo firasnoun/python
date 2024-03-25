@@ -7,3 +7,15 @@ services:
       - "80:80"  # Maps port 80 of the container to port 80 on the host
     volumes:
       - ./html:/usr/local/apache2/htdocs/  # Optional: Mounts a directory from your host to the container for custom web content
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+    volumes:
+      - db_data:/var/lib/postgresql/data  # Persists data across container restarts
+
+volumes:
+  db_data:
